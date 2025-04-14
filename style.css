@@ -126,14 +126,6 @@ h1 {
     }
 }
 
-.elfsight-app-7b212144-6bab-4185-a4fc-0315b11ca692 {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .navbar .menu-hamburger {
     display: none;
     width: 35px;
@@ -164,10 +156,23 @@ h1 {
     padding: 2em;
     transition: top 0.5s ease-in-out;
     z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     overflow-y: auto;
+}
+
+#menu-slide-chichas {
+    position: fixed;
+    background-image: url(./images/3.jpg);
+    background-position: 90% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#menu-slide-carte {
+    position: fixed;
+    background-image: url(./images/3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .menu-slide.show {
     top: 0;
@@ -182,46 +187,185 @@ h1 {
 
 .menu-items {
     display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-items: center;
     border-top: white 1px solid;
 }
 
-#close-menu {
-    position:absolute;
-    right: 20px; 
-    font-size:1.5em; 
-    cursor:pointer;
-    top: 15px;
-    color: white; 
-}
-
-.open-menu-btn {
+.menu-slide span[id^="close-menu"] {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1em 2em;
-    background-color: #fff;
-    color: black;
-    border: none;
-    border-radius: 25px;
-    font-size: 1em;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
-}
-.open-menu-btn:hover {
-    background-color: #f2f2f2;
-}
+    color: #ffffff;
+    z-index: 1000;
+    transition: color 0.2s ease;
+  }
+  
+  .menu-slide span[id^="close-menu"]:hover {
+    color: #c2ae66;
+  }
 
 .back-menu {
-    background-color: rgba(0, 0, 0, 0.865);
-    top: 100%;
-    left: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-radius: 2px;
+}
+
+/* ----------- */
+.menu-items {
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;  
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.412);
+}
+
+/* Chaque section (Boissons froides, chaudes, cocktails, milkshakes) */
+.menu-section {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Titre de chaque section (Boissons Froides, Cocktails, etc.) */
+.menu-section h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Yellowtail', cursive;
+}
+
+/* Liste des items du menu */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.item {
+    font-weight: normal;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Styling pour la section cocktails et milkshakes */
+.cocktail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.cocktail {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cocktail img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.cocktail span {
+    display: block;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: white;
+}
+
+.cocktail:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Conteneur principal des sections */
+.menu-items {
+    display: flex;
+    flex-direction: column; /* Les sections s'affichent verticalement */
+    gap: 40px; /* Espace entre les sections */
+    padding: 20px;
+}
+
+/* Chaque section (Goûts, Foyers, etc.) */
+.menu-section {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Titre des sections */
+.menu-section h3 {
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    margin-bottom: 10px;
+    font-family: 'Yellowtail', cursive;
+}
+
+/* Liste des éléments */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.disposition {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-list li {
+    padding: 5px 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style pour les éléments */
+.item {
+    font-weight: normal;
+}
+
+.price {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Section des images */
+.image-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 50%;
+    height: auto;
+    align-items: center;
+}
+
+.image-section div {
+    flex: 1;
+}
+
+.image-section img {
     width: 100%;
-    height: 100vh;
+    border-radius: 8px;
+    border: 0.5px solid white;
+    box-shadow:
+    inset 0 0 0.5em white,
+    0 0 0.5em white;
+}
+
+/* Styling de la section chicha */
+.menu-slide {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 @media screen and (min-width:300px) and (max-width:500px) {
@@ -240,11 +384,6 @@ h1 {
             width: 150px;
         }
     }
-
-    /* .navbar .nav-links ul {
-        
-    } */
-
     .navbar .nav-links ul li {
         margin : 25px 0px;
         font-size: 1em;

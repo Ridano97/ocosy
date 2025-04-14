@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo-chiche.png">
     <title>O'Cosy</title>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="logo">
             <a href="#">
                 <img src="./images/ocosylogo.png" alt="logo-site">
@@ -19,8 +20,8 @@
         <div class="nav-links">
             <ul>               
                 <li><a href="#" >Accueil</a></li>
-                <li><a href="#" >Chichas</a></li>
-                <li><a href="#" >Carte</a></li>
+                <li><a href="#" id="chichas-link">Chichas</a></li>
+                <li><a href="#" id="carte-link">Carte</a></li>
                 <li><a href="#" id="boisson-link">Boissons</a></li>
             </ul>
         </div>
@@ -29,15 +30,128 @@
     </nav>
         <header>
               <h1>Y'a pas de fumée sans nous</h1>
-        </header>
+        </header> 
         <div id="menu-slide" class="menu-slide">
-            <span id="close-menu">✖</span>
+            <span id="close-menu-boisson">✖</span>
             <div class="back-menu">
                 <h2>Boissons</h2>
-                <div class="menu-items">  
+                <div class="menu-items">   
+                    <!-- Boissons froides -->
+                    <section class="menu-section">
+                        <h3>Boissons Froides</h3>
+                        <ul class="menu-list">
+                            <li><span class="item">Eau 50cl</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Perrier</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Fanta</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Oasis</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Coca - Cherry, Vanille, Zero</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Ice Tea</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Red - Vanille, Fraise Abricot, Tropical, Pêche</span><span class="price">3,50€</span></li>
+                            <li><span class="item">Schweppes Agrumes</span><span class="price">2,50€</span></li>
+                        </ul>
+                    </section>
+                    <!-- Boissons chaudes -->
+                    <section class="menu-section">
+                        <h3>Boissons Chaudes</h3>
+                        <ul class="menu-list">
+                            <li><span class="item">Thé à la menthe (Théière)</span><span class="price">5,00€</span></li>
+                            <li><span class="item">Café</span><span class="price">2,50€</span></li>
+                            <li><span class="item">Latte</span><span class="price">3,50€</span></li>
+                        </ul>
+                    </section>
+                    <!-- Cocktails -->
+                    <section class="menu-section">
+                        <h3>Cocktails</h3>
+                        <div class="cocktail-list">
+                            <div class="cocktail">
+                                <img src="./images/mojito-menthe.png" alt="Mojito Menthe">
+                                <span>Mojito Menthe</span>
+                                <span class="price">5€</span>
+                            </div>
+                            <div class="cocktail">
+                                <img src="./images/mojito-fraise.png" alt="Mojito Fraise">
+                                <span>Mojito Fraise</span>
+                                <span class="price">5€</span>
+                            </div>
+                            <div class="cocktail">
+                                <img src="./images/smoothie-fraise.png" alt="Smoothie Fraise">
+                                <span>Smoothie Fraise</span>
+                                <span class="price">5€</span>
+                            </div>
+                            <div class="cocktail">
+                                <img src="./images/watermelon-juice.png" alt="Jus Pastèque">
+                                <span>Jus Pastèque</span>
+                                <span class="price">5€</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Milkshakes -->
+                    <section class="menu-section">
+                        <h3>Milkshakes</h3>
+                        <div class="cocktail-list">
+                            <div class="cocktail">
+                                <img src="./images/milkshake.png" alt="Milkshake Vanille">
+                                <span>Vanille, spéculos, oréo, bueno</span>
+                                <span class="price">5€</span>
+                            </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </div>           
+        </div>        
+        <div id="menu-slide-chichas" class="menu-slide">
+            <span id="close-menu-chichas">✖</span>
+            <div class="back-menu">
+                <h2>Chichas</h2>
+                <div class="menu-items">
+                    <!-- Goûts -->
+                    <section class="menu-section">
+                        <div class="disposition">
+                            <div class="image-section">
+                                <img src="./images/5.jpg" alt="photo-gants-gouts-tabac-chicha">
+                            </div>
+                            <ul class="menu-list">
+                            <h3>Goûts</h3>
+                            <li><span class="item">Menthe</span></li>
+                            <li><span class="item">Mi Amor</span></li>
+                            <li><span class="item">Violette</span></li>
+                            <li><span class="item">Pomme</span></li>
+                            <li><span class="item">Hawai</span></li>
+                            <li><span class="item">Raison Royal</span></li>
+                            <li><span class="item">Ice Lemon</span></li>
+                            <li><span class="item">Lady Killer</span></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- Foyers -->
+                    <section class="menu-section">
+                        <div class="disposition">
+                            <ul class="menu-list">
+                                <h3>Foyers</h3>
+                                <li><span class="item">Quasar</span><span class="price">15€</span></li>
+                                <li><span class="item">Kaloud</span><span class="price">10€</span></li>
+                                <li><span class="item">Brohoud</span><span class="price">10€</span></li>
+                                <li><span class="item">Tête Plate</span><span class="price">10€</span></li>
+                                <li><span class="item">Madrid</span><span class="price">10€</span></li>
+                            </ul>
+                            <div class="image-section">
+                                <img src="./images/8.jpg" alt="tete-de-chicha">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>        
+        <div id="menu-slide-carte" class="menu-slide">
+            <span id="close-menu-carte">✖</span>
+            <div class="back-menu">
+                <h2>Carte</h2>
+                <div class="menu-items">
+                    <p>Contenu de la carte...</p>
+                </div>
+            </div>
+        </div>
     <script src="./script.js"></script>
     <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </body>
