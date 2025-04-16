@@ -1,59 +1,77 @@
 // Sélecteurs de base
-const menuHamburger = document.querySelector(".menu-hamburger");
-const navLinks = document.querySelector(".nav-links");
+const menuHamburger   = document.querySelector(".menu-hamburger");
+const navLinks        = document.querySelector(".nav-links");
+const socialLinks     = document.querySelector(".social-links");
 
-// Menus slide
-const menuSlideBoisson = document.getElementById('menu-slide');
-const menuSlideChichas = document.getElementById('menu-slide-chichas');
-const menuSlideCarte = document.getElementById('menu-slide-carte');
+const menuSlideBoisson  = document.getElementById('menu-slide');
+const menuSlideChichas  = document.getElementById('menu-slide-chichas');
+const menuSlideCarte    = document.getElementById('menu-slide-carte');
 
-// Liens de navigation
-const boissonLink = document.getElementById('boisson-link');
-const chichasLink = document.getElementById('chichas-link');
-const carteLink = document.getElementById('carte-link');
+const boissonLink    = document.getElementById('boisson-link');
+const chichasLink    = document.getElementById('chichas-link');
+const carteLink      = document.getElementById('carte-link');
 
-// Fonction pour fermer tous les menus
+const closeBoisson   = document.getElementById('close-menu-boisson');
+const closeChichas   = document.getElementById('close-menu-chichas');
+const closeCarte     = document.getElementById('close-menu-carte');
+
+// Variable pour suivre l'état du menu hamburger
+let isHamburgerOpen = false;
+
+// Ferme tous les menus
 function closeAllMenus() {
-    menuSlideBoisson.classList.remove('show');
-    menuSlideChichas.classList.remove('show');
-    menuSlideCarte.classList.remove('show');
+  document.body.classList.remove("menu-open");
+  menuSlideBoisson.classList.remove('show');
+  menuSlideChichas.classList.remove('show');
+  menuSlideCarte.classList.remove('show');
+  menuHamburger.classList.remove('hidden-hamburger');
+
+  // Réaffiche socialLinks uniquement si le menu hamburger est fermé
+  if (!isHamburgerOpen) {
+    socialLinks.classList.remove('hidden');
+  }
 }
 
-// Gère le bouton hamburger
+// Hamburger menu — changement instantané de l’icône
 menuHamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-menu');
-    menuHamburger.classList.add('fade-out');
+  navLinks.classList.toggle('mobile-menu');
+  isHamburgerOpen = navLinks.classList.contains('mobile-menu');
 
-    setTimeout(() => {
-        if (menuHamburger.src.includes("hamburger.png")) {
-            menuHamburger.src = "./images/croix.png";
-        } else {
-            menuHamburger.src = "./images/hamburger.png";
-        }
-        menuHamburger.classList.remove('fade-out');
-    }, 150);
+  // Masquer ou afficher les social links
+  socialLinks.classList.toggle('hidden', isHamburgerOpen);
+
+  // Changement direct de l'image
+  menuHamburger.src = isHamburgerOpen
+    ? "./images/croix.png"
+    : "./images/hamburger.png";
 });
 
-// Gestion des clics sur les liens
+// Ouverture des sous-menus
 boissonLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeAllMenus();
-    menuSlideBoisson.classList.add('show');
+  e.preventDefault();
+  closeAllMenus();
+  document.body.classList.add("menu-open");
+  menuSlideBoisson.classList.add('show');
+  menuHamburger.classList.add('hidden-hamburger');
 });
 
 chichasLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeAllMenus();
-    menuSlideChichas.classList.add('show');
+  e.preventDefault();
+  closeAllMenus();
+  document.body.classList.add("menu-open");
+  menuSlideChichas.classList.add('show');
+  menuHamburger.classList.add('hidden-hamburger');
 });
 
 carteLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeAllMenus();
-    menuSlideCarte.classList.add('show');
+  e.preventDefault();
+  closeAllMenus();
+  document.body.classList.add("menu-open");
+  menuSlideCarte.classList.add('show');
+  menuHamburger.classList.add('hidden-hamburger');
 });
 
 // Fermeture des menus
-document.getElementById('close-menu-boisson').addEventListener('click', closeAllMenus);
-document.getElementById('close-menu-chichas').addEventListener('click', closeAllMenus);
-document.getElementById('close-menu-carte').addEventListener('click', closeAllMenus);
+closeBoisson.addEventListener('click', closeAllMenus);
+closeChichas.addEventListener('click', closeAllMenus);
+closeCarte.addEventListener('click', closeAllMenus);
