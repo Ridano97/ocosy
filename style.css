@@ -472,7 +472,21 @@ h1 {
         font-size: 15px;
     }
 
+    .item {
+        font-size: 13px;
+    }
 
+    .price {
+        font-size: 13px;
+    }
+
+    .cocktail span {
+        font-size: 13px;
+    }
+
+    .cocktail .price {
+        font-size: 13px;
+    }
     .navbar .logo {
         position: absolute;
         margin-top: 1em;
