@@ -406,7 +406,7 @@ h1 {
     background-color: rgba(0, 0, 0, 0.817);
     padding: 10px 20px;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -437,17 +437,24 @@ h1 {
 
   /* Apparition en cascade de haut en bas */
   .card-1 {
-    animation-delay: 2.5s;
+    animation-delay: 2s;
   }
   .card-2 {
-    animation-delay: 3.5s;
+    animation-delay: 3s;
   }
   .card-3 {
-    animation-delay: 4.5s;
+    animation-delay: 4s;
   }
   .card-4 {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
   }
+
+ .card-5 {
+    display: flex;
+    flex-direction: column;
+    animation-delay: 4s;
+  }
+  
 .hidden {
     opacity: 0;
     pointer-events: none;
@@ -459,6 +466,10 @@ h1 {
         background-image: url(./images/1.jpg);
         background-size: cover;
         background-position: 70% center;
+    }
+
+    .social-card {
+        font-size: 15px;
     }
 
 
@@ -482,7 +493,7 @@ h1 {
     }
 
     .image-section img  {
-        height: 160px;
+        height: 150px;
     }
 
     .card-4 {
