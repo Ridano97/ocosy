@@ -6,6 +6,7 @@ const socialLinks     = document.querySelector(".social-links");
 const menuSlideBoisson  = document.getElementById('menu-slide');
 const menuSlideChichas  = document.getElementById('menu-slide-chichas');
 const menuSlideCarte    = document.getElementById('menu-slide-carte');
+const menuSlideGoogle   = document.getElementById('menu-slide-google'); // 👈 Ajout pour Google
 
 const boissonLink    = document.getElementById('boisson-link');
 const chichasLink    = document.getElementById('chichas-link');
@@ -14,6 +15,7 @@ const carteLink      = document.getElementById('carte-link');
 const closeBoisson   = document.getElementById('close-menu-boisson');
 const closeChichas   = document.getElementById('close-menu-chichas');
 const closeCarte     = document.getElementById('close-menu-carte');
+const closeGoogle    = document.getElementById('close-menu-google'); // 👈 Ajout pour Google
 
 // Variable pour suivre l'état du menu hamburger
 let isHamburgerOpen = false;
@@ -24,6 +26,7 @@ function closeAllMenus() {
   menuSlideBoisson.classList.remove('show');
   menuSlideChichas.classList.remove('show');
   menuSlideCarte.classList.remove('show');
+  menuSlideGoogle.classList.remove('show'); // 👈 Ajout Google
   menuHamburger.classList.remove('hidden-hamburger');
 
   // Réaffiche socialLinks uniquement si le menu hamburger est fermé
@@ -70,6 +73,20 @@ carteLink.addEventListener('click', (e) => {
   menuSlideCarte.classList.add('show');
   menuHamburger.classList.add('hidden-hamburger');
 });
+
+document.getElementById("google-slide-link").addEventListener("click", function(e) {
+  e.preventDefault();
+  closeAllMenus(); // 👈 Ferme les autres au cas où
+  document.body.classList.add("menu-open"); // 👈 Ajout pour cohérence
+  menuSlideGoogle.classList.add("show");
+  menuHamburger.classList.add('hidden-hamburger'); // 👈 Cacher le hamburger
+});
+
+document.getElementById("close-menu-google").addEventListener("click", function() {
+  menuSlideGoogle.classList.remove("show");
+  menuHamburger.classList.remove('hidden-hamburger'); // 👈 Réaffiche le hamburger
+});
+
 
 // Fermeture des menus
 closeBoisson.addEventListener('click', closeAllMenus);

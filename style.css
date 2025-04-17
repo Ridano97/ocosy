@@ -29,7 +29,6 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: Alta;
 }
 
 body{
@@ -64,6 +63,7 @@ h1 {
     width: 100%;
     box-sizing: border-box;
     align-items: center;
+    font-family: Alta;
 
 }
 
@@ -202,6 +202,7 @@ h1 {
     gap: 40px;  
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.411);
+    font-family: Alta;
 }
 
 /* Chaque section (Boissons froides, chaudes, cocktails, milkshakes) */
@@ -222,6 +223,7 @@ h1 {
 .menu-list .menu-list-chicha  {
     list-style: none;
     padding: 0;
+    font-family: Alta;
 }
 
 .menu-list-chicha li {
@@ -254,6 +256,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 20px;
+    font-family: Alta;
 }
 
 .cocktail {
@@ -261,6 +264,7 @@ h1 {
     padding: 15px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
+    
 }
 
 .cocktail img {
@@ -287,6 +291,7 @@ h1 {
     flex-direction: column; /* Les sections s'affichent verticalement */
     gap: 40px; /* Espace entre les sections */
     padding: 20px;
+    font-family: Alta;
 }
 
 .disposition {
@@ -404,6 +409,7 @@ h1 {
     justify-content: center;
     animation: fadeInUp 7s ease forwards;
     cursor: pointer;
+    font-family: Alta;
   
     img {
       width: 30px;
@@ -412,16 +418,20 @@ h1 {
   
     span {
       margin: 10px;
+      text-align: center;
     }
   }
 
   .social-card:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(55, 55, 55, 0.827);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
 
-  
+  #menu-slide-google {
+    background-image: url(./images/devanture.jpg);
+  }
+
   /* Apparition en cascade de haut en bas */
   .card-1 {
     animation-delay: 2.5s;
@@ -438,14 +448,12 @@ h1 {
   .card-5 {
     animation-delay: 1.5s;
   }
- 
 
 .hidden {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
-
 
 @media screen and (min-width:300px) and (max-width:500px) {
     header {
