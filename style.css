@@ -22,6 +22,9 @@
     font-style: normal;
   }  
 
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -443,12 +446,8 @@ h1 {
     animation-delay: 4.5s;
   }
   .card-4 {
-    animation-delay: 0.5s;
-  }
-  .card-5 {
     animation-delay: 1.5s;
   }
-
 .hidden {
     opacity: 0;
     pointer-events: none;
