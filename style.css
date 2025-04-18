@@ -56,7 +56,7 @@ h1 {
     animation: smoke 5s ease-in-out forwards;
     font-family: Alta;
     position: relative;
-    z-index: 1; /* Plus bas */
+    z-index: 0; /* Plus bas */
 }
 
 .navbar {
